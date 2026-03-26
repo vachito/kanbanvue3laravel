@@ -1,0 +1,1 @@
+<template>hola mundo</template>
