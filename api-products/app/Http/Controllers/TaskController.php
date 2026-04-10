@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Task;
 use Illuminate\Http\Request;
+use Nette\Utils\Json;
 
 class TaskController extends Controller
 {
@@ -38,7 +39,9 @@ class TaskController extends Controller
      */
     public function update(Request $request, Task $task)
     {
-        //
+        $task->is_complete=$request['is_complete'];
+        $task->save();
+        return response()->json(['msg' => 'Tarea completa']);
     }
 
     /**
